@@ -30,3 +30,6 @@ function addBookToLibrary(title, author, pages, read) {
   // push the book object into myLibrary array
   myLibrary.push(book);
 };
+
+// Link prototypes and add prototype methods
+Object.setPrototypeOf(addBookToLibrary.prototype, Book.prototype);

@@ -33,3 +33,8 @@ function addBookToLibrary(title, author, pages, read) {
 
 // Link prototypes and add prototype methods
 Object.setPrototypeOf(addBookToLibrary.prototype, Book.prototype);
+
+// add some dummy books to myLibrary
+const book1 = new addBookToLibrary("The Hobbit" , "J.R.R. Tolkien", 295, "not read yet");
+const book2 = new addBookToLibrary("The Very Hungry Caterpillar", "Eric Carle", 26, "read");
+const book3 = new addBookToLibrary("The Gruffalo", "Julia Donaldson", 32, "reading");

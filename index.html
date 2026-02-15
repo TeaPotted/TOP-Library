@@ -8,6 +8,30 @@
 </head>
 <body>
   <div class="container"></div>
+  <button id="openForm">+ New Book</button>
+  <dialog>
+    <form id="newBookForm">
+      <h2>New Book</h2>
+      <button class="close" type="button">X</button>
+      <div class="input-container">
+        <label for="title">Title</label>
+        <input required type="text" id="title" name="title">
+      </div>
+      <div class="input-container">
+        <label for="author">Written By</label>
+        <input required type="text" id="author" name="author">
+      </div>
+      <div class="input-container">
+        <label for="pagesNum">Pages</label>
+        <input required type="number" id="pagesNum" name="pagesNum" min="1">
+      </div>
+      <div class="input-container">
+        <label for="readStatus">Read Status</label>
+        <input required type="text" id="readStatus" name="readStatus" placeholder="Not read yet">
+      </div>
+      <input id="addButton" type="button" value="Add Book">
+    </form>
+  </dialog>
   <script src="script.js"></script>
 </body>
 </html>

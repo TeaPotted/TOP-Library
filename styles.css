@@ -1,0 +1,138 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: lightgray;
+}
+
+.container {
+  display: grid;
+  gap: 30px;  
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 30px 20px;
+}
+
+.bookDiv {
+  background-color: white;
+  height: 230px;
+  justify-items: center;
+  padding: 20px 0px;
+  border-radius: 5px;
+  box-shadow: 0 7px 2px -2px rgb(157, 157, 157);
+}
+
+.bookDiv p {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.7em;
+  text-align: center;
+}
+
+.author {
+  text-decoration: underline;
+  font-size: 1.2em; 
+}
+
+#openForm {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+ -webkit-transform: translateX(-50%);
+ -moz-transform: translateX(-50%);
+ transform: translateX(-50%);
+
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 7px 2px -2px lightgray;
+}
+
+      /* dialog / form section */
+dialog {
+  justify-self: center;
+  align-self: center;
+  border: none;
+}
+      
+#newBookForm {
+  position: relative;
+  justify-self: center;
+  width: fit-content;
+  background-color: white;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 7px 2px -2px rgb(157, 157, 157);
+}
+
+#newBookForm button.close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  cursor: pointer;
+  padding: 3px 5px;
+  font-size: 14px;
+  background-color:red;
+  font-weight: bold;
+  color: white;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0px 2px -4px lightgray;
+}
+
+#newBookForm h2 {
+  text-align: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 18px;
+  gap: 3.5px;
+}
+
+input {
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid rgb(172, 169, 169);
+  width: 300px;
+}
+
+input:focus {
+  outline: none;
+  border: 1px solid rgb(66, 66, 253);
+}
+
+input:valid {
+  outline: none;
+  border: 1px solid lime;
+}
+
+#newBookForm input[type="button"] {
+  margin-top: 20px;
+  padding: 8px 15px;
+  font-size: 18px;
+  background-color:orangered;
+  font-weight: bold;
+  color: white;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 7px 2px -2px lightgray;
+  width: fit-content;
+  cursor: pointer;
+}

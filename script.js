@@ -1,5 +1,11 @@
 let myLibrary = []; // an array to keep all the books
 
+// get the dialog element and #openForm button
+const dialog = document.querySelector("dialog");
+const openForm = document.querySelector("#openForm");
+// get the .close button
+const closeForm = document.querySelector(".close");
+
 // write a constructor for making "Book" objects
 function Book(title, author, pages, read) {
   this.title = title;
@@ -81,3 +87,8 @@ function displayBook() {
 };
 
 displayBook();
+
+// when openForm is clicked, open dialog
+openForm.addEventListener("click", () => dialog.showModal());
+// when closeForm is clicked, close dialog
+closeForm.addEventListener("click", () => dialog.close());

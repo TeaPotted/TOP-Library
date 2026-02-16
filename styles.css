@@ -17,9 +17,10 @@ body {
 
 .bookDiv {
   background-color: white;
-  height: 230px;
+  min-height: 230px;
+  max-height: fit-content;
   justify-items: center;
-  padding: 20px 0px;
+  padding: 20px 10px;
   border-radius: 5px;
   box-shadow: 0 7px 2px -2px rgb(157, 157, 157);
 }
@@ -36,6 +37,11 @@ body {
 .author {
   text-decoration: underline;
   font-size: 1.2em; 
+  word-break: break-all;
+}
+
+.read {
+  word-break: break-all;
 }
 
 #openForm {

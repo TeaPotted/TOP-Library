@@ -88,6 +88,8 @@ function displayBook() {
     removeBtn.classList.add("remove"); // set button's class to .container
     bookDiv.appendChild(removeBtn); // append the button to bookDiv
 
+    // when removeBtn is clicked, remove the selected book
+    removeBtn.addEventListener("click",() =>  {removeBook(book.id)});
     
     document.querySelector("div.container").appendChild(bookDiv); // append bookDiv to .container
   };

@@ -83,6 +83,12 @@ function displayBook() {
       
       bookDiv.appendChild(p);  // append p to bookDiv
     };
+    // create a "remove" button
+    const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+    removeBtn.classList.add("remove"); // set button's class to .container
+    bookDiv.appendChild(removeBtn); // append the button to bookDiv
+    
     
     document.querySelector("div.container").appendChild(bookDiv); // append bookDiv to .container
   };

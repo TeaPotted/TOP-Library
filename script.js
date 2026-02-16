@@ -5,6 +5,8 @@ const dialog = document.querySelector("dialog");
 const openForm = document.querySelector("#openForm");
 // get the .close button
 const closeForm = document.querySelector(".close");
+// get the .container div
+const container = document.querySelector(".container");
 
 // write a constructor for making "Book" objects
 function Book(title, author, pages, read) {
@@ -87,6 +89,43 @@ function displayBook() {
 };
 
 displayBook();
+
+// create a function that adds a new book using #newBookForm's inputs
+function formAddBook() {
+
+  // get the form's title, author, pagesNum and readStatus input values
+  const title = document.querySelector("#title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pagesNum");
+  const readStatus = document.querySelector("#readStatus");
+
+  // if all the form's input are valid...
+  if (document.querySelector("form").checkValidity()) {
+    // create a new book using the inputs and push it to myLibrary
+    new addBookToLibrary(title.value, author.value, pages.value, readStatus.value);
+
+    // if .container has content:
+    if (container.textContent !== "") {
+      container.textContent = ""; // remove all content in .container
+      displayBook() // show updated myLibrary array
+      dialog.close(); // close the dialog
+
+    // else, just show updated myLibrary array and close the dialog
+    } else {
+      displayBook();
+      dialog.close()
+    };
+
+    // reset all the inputs
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    readStatus.value = "";
+  };
+};
+
+// call formAddBook() when #addButton is clicked
+document.getElementById("addButton").addEventListener("click", formAddBook);
 
 // when openForm is clicked, open dialog
 openForm.addEventListener("click", () => dialog.showModal());

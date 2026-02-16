@@ -88,7 +88,7 @@ function displayBook() {
     removeBtn.textContent = "Remove";
     removeBtn.classList.add("remove"); // set button's class to .container
     bookDiv.appendChild(removeBtn); // append the button to bookDiv
-    
+
     
     document.querySelector("div.container").appendChild(bookDiv); // append bookDiv to .container
   };
@@ -128,6 +128,16 @@ function formAddBook() {
     pages.value = "";
     readStatus.value = "";
   };
+};
+
+// create a function that removes a selected book from myLibrary array
+function removeBook(id) {
+  // update myLibrary by filtering out the selected book using it's id
+  myLibrary = myLibrary.filter((book) => book.id !== id);
+  
+  // reset .container's content and display the updated myLibrary array
+  container.textContent = "";
+  displayBook();
 };
 
 // call formAddBook() when #addButton is clicked

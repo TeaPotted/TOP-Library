@@ -57,10 +57,10 @@ function displayBook() {
 
     // for each key in the book (because the book is an object)...
     for (let key in book) {
-      const p = document.createElement("p"); // create a paragraph element that will hold key's value
-
-      // if the key's name is not "id"
-      if (key !== "id") {
+      // if key is "id" then add a "data-id" attribute that corresponds to the book's id to bookDiv
+      if (key === "id") bookDiv.dataset.id = book[key];
+      else {
+        const p = document.createElement("p"); // create a paragraph element that will hold key's value
         p.classList.add(key); // add a class of the key's name to p
 
         switch (key) {
@@ -79,9 +79,8 @@ function displayBook() {
             p.textContent = book[key];
             break;
         };
+        bookDiv.appendChild(p);  // append p to bookDiv
       };
-      
-      bookDiv.appendChild(p);  // append p to bookDiv
     };
     // create a "remove" button
     const removeBtn = document.createElement("button");

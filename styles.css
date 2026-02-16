@@ -23,6 +23,7 @@ body {
   padding: 20px 10px;
   border-radius: 5px;
   box-shadow: 0 7px 2px -2px rgb(157, 157, 157);
+  position: relative;
 }
 
 .bookDiv p {
@@ -38,10 +39,24 @@ body {
   text-decoration: underline;
   font-size: 1.2em; 
   word-break: break-all;
+  text-align: center;
 }
 
 .read {
   word-break: break-all;
+}
+
+.remove {
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 79, 79);
+  font-weight: bold;
+  padding: 3px 5px;
+  cursor: pointer;
 }
 
 #openForm {

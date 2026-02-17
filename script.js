@@ -141,6 +141,14 @@ function removeBook(id) {
   displayBook();
 };
 
+// create a function that takes a class and textContent parameter for creating a button
+function createBtn(cls, content) {
+  const btn = document.createElement("button");
+  btn.classList.add(cls);
+  btn.textContent = content;
+  return btn;
+};
+
 // call formAddBook() when #addButton is clicked
 document.getElementById("addButton").addEventListener("click", formAddBook);
 

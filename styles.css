@@ -59,6 +59,19 @@ body {
   cursor: pointer;
 }
 
+.edit {
+  position: absolute;
+  right: 85px;
+  bottom: 15px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: cornflowerblue;
+  font-weight: bold;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
 #openForm {
   position: fixed;
   bottom: 15px;

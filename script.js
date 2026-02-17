@@ -83,9 +83,7 @@ function displayBook() {
       };
     };
     // create a "remove" button
-    const removeBtn = document.createElement("button");
-    removeBtn.textContent = "Remove";
-    removeBtn.classList.add("remove"); // set button's class to .container
+    const removeBtn = createBtn("remove", "Remove");
     bookDiv.appendChild(removeBtn); // append the button to bookDiv
 
     // when removeBtn is clicked, remove the selected book

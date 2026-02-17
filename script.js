@@ -84,7 +84,10 @@ function displayBook() {
     };
     // create a "remove" button
     const removeBtn = createBtn("remove", "Remove");
-    bookDiv.appendChild(removeBtn); // append the button to bookDiv
+    // create an "edit" button
+    const editBtn = createBtn("edit", "Edit");
+    bookDiv.appendChild(editBtn); // append the edit button to bookDiv
+    bookDiv.appendChild(removeBtn); // append the remove button to bookDiv
 
     // when removeBtn is clicked, remove the selected book
     removeBtn.addEventListener("click",() =>  {removeBook(book.id)});

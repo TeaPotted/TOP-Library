@@ -142,6 +142,26 @@ function removeBook(id) {
   displayBook();
 };
 
+// create a function that makes the .read paragraph editable
+function editReadStatus(id) {
+  const bookToEdit = myLibrary.find(book => book.id === id); // get the book's id
+  let bookDiv = document.querySelector(`[data-id="${bookToEdit.id}"]`); // get the bookDiv using the book's id
+  let readStatus = bookDiv.querySelector(".read"); // get the .read paragraph
+  const editBtn = bookDiv.querySelector(".edit"); // get the edit button
+
+  // if readStatus is not editable
+  if (readStatus.contentEditable == "false") {
+    // set readStatus paragraph to be editable and focus on it
+    readStatus.contentEditable = "true";
+    readStatus.focus();
+    editBtn.textContent = "Done"; // change the text of editBtn from "Edit" to "Done"
+  } else {
+    // set editBtn textContent back to "Edit" and make readStatus uneditable
+    editBtn.textContent = "Edit";
+    readStatus.contentEditable = "false";
+  }
+};
+
 // create a function that takes a class and textContent parameter for creating a button
 function createBtn(cls, content) {
   const btn = document.createElement("button");

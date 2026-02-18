@@ -77,6 +77,7 @@ function displayBook() {
           // anything else, just show the key's value
           default:
             p.textContent = book[key];
+            p.contentEditable = "false"; // default it to be uneditable
             break;
         };
         bookDiv.appendChild(p);  // append p to bookDiv
@@ -91,6 +92,8 @@ function displayBook() {
 
     // when removeBtn is clicked, remove the selected book
     removeBtn.addEventListener("click",() =>  {removeBook(book.id)});
+    // when editBtn is clicked, call editReadStatus
+    editBtn.addEventListener("click", () => {editReadStatus(book.id)});
     
     document.querySelector("div.container").appendChild(bookDiv); // append bookDiv to .container
   };

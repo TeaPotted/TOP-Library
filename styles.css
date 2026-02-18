@@ -46,6 +46,13 @@ body {
   word-break: break-all;
 }
 
+.read[contenteditable="true"], .read[contenteditable="true"]{
+  outline: none;
+  border: 2px solid lightblue;
+  border-radius: 10px;
+  padding: 5px;
+}
+
 .remove {
   position: absolute;
   right: 10px;

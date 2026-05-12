@@ -231,12 +231,24 @@ function removeRequiredAttr() {
   document.querySelector("#readStatus").removeAttribute("required");
 };
 
+// function for adding required back to all inputs in #newBookForm
+function addRequiredAttr() {
+  // add the "required" attribute to #title, #author, #pagesNum and #readStatus
+  document.querySelector("#title").setAttribute("required", true);
+  document.querySelector("#author").setAttribute("required", true);
+  document.querySelector("#pagesNum").setAttribute("required", true);
+  document.querySelector("#readStatus").setAttribute("required", true);
+};
+
 // call formAddBook() when #addButton is clicked
 document.getElementById("addButton").addEventListener("click", formAddBook);
 // make add book form prevent default when submitting
 document.querySelector("form").addEventListener("submit", (e) => e.preventDefault());
 
-// when openForm is clicked, open dialog
-openForm.addEventListener("click", () => dialog.showModal());
+// when openForm is clicked, open dialog and add "required" attribute to all inputs in #newBookForm
+openForm.addEventListener("click", () => {
+  dialog.showModal()
+  addRequiredAttr();
+});
 // when closeForm is clicked, close dialog
 closeForm.addEventListener("click", () => dialog.close());

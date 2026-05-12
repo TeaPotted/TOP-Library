@@ -163,7 +163,7 @@ input:valid {
   border: 1px solid lime;
 }
 
-#newBookForm button#addButton {
+#newBookForm #addButton {
   margin-top: 20px;
   padding: 8px 15px;
   font-size: 18px;

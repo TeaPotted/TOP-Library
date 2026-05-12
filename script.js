@@ -105,6 +105,12 @@ function formAddBook() {
   const pages = document.querySelector("#pagesNum");
   const readStatus = document.querySelector("#readStatus");
 
+  // default all input custom validity messages to empty string
+  title.setCustomValidity("");
+  author.setCustomValidity("");
+  pages.setCustomValidity("");
+  readStatus.setCustomValidity("");
+
   // if all the form's input are valid...
   if (document.querySelector("form").checkValidity()) {
     // create a new book using the inputs and push it to myLibrary
@@ -127,7 +133,53 @@ function formAddBook() {
     author.value = "";
     pages.value = "";
     readStatus.value = "";
-  };
+  } else {
+
+    // based on which input is invalid..
+    switch (true) {
+      case (!title.validity.valid): // if title is invalid
+        // set a custom validity message
+        title.setCustomValidity("The title field needs to be filled!");
+        // if input is valid, reset the custom validity message
+        title.addEventListener("input", (e) => {
+          if (!title.validity.valueMissing) { title.setCustomValidity("") };
+        });
+        break;
+
+      case (!author.validity.valid): // if author is invalid
+        // set a custom validity message
+        author.setCustomValidity("The author field needs to be filled!");
+        // if input is valid, reset the custom validity message
+        author.addEventListener("input", (e) => {
+          if (!author.validity.valueMissing) { author.setCustomValidity("") };
+        });
+        break;
+
+      case (!pages.validity.valid): // if pages is invalid
+      // create custom validity messages for when pages input value is less than minimum and when value is empty
+      pages.validity.rangeUnderflow 
+        ? pages.setCustomValidity("Number of pages must be greater than or equal to 1")
+        : pages.setCustomValidity("The pages field needs to be filled!");
+      
+        // if input is valid, reset the custom validity message
+        pages.addEventListener("input", (e) => {
+          if (!pages.validity.valueMissing) { pages.setCustomValidity("") };
+        });
+        break;
+
+      case (!readStatus.validity.valid): // if readStatus is invalid
+        // set a custom validity message
+        readStatus.setCustomValidity("The read status field needs to be filled!");
+        // if input is valid, reset the custom validity message
+        readStatus.addEventListener("input", (e) => {
+          if (!readStatus.validity.valueMissing) readStatus.setCustomValidity("");
+        });
+        break;
+
+      default:
+        break;
+    };
+  }
 };
 
 // create a function that removes a selected book from myLibrary array

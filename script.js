@@ -222,6 +222,8 @@ function createBtn(cls, content) {
 
 // call formAddBook() when #addButton is clicked
 document.getElementById("addButton").addEventListener("click", formAddBook);
+// make add book form prevent default when submitting
+document.querySelector("form").addEventListener("submit", (e) => e.preventDefault());
 
 // when openForm is clicked, open dialog
 openForm.addEventListener("click", () => dialog.showModal());

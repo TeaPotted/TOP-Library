@@ -121,11 +121,13 @@ function formAddBook() {
       container.textContent = ""; // remove all content in .container
       displayBook() // show updated myLibrary array
       dialog.close(); // close the dialog
+      removeRequiredAttr(); // remove the required attribute from all inputs
 
     // else, just show updated myLibrary array and close the dialog
     } else {
       displayBook();
-      dialog.close()
+      dialog.close();
+      removeRequiredAttr(); // remove the required attribute from all inputs
     };
 
     // reset all the inputs
@@ -218,6 +220,15 @@ function createBtn(cls, content) {
   btn.classList.add(cls);
   btn.textContent = content;
   return btn;
+};
+
+// function for removing required attribute from all inputs in #newBookForm
+function removeRequiredAttr() {
+  // remove the "required" attribute from #title, #author, #pagesNum and #readStatus
+  document.querySelector("#title").removeAttribute("required");
+  document.querySelector("#author").removeAttribute("required");
+  document.querySelector("#pagesNum").removeAttribute("required");
+  document.querySelector("#readStatus").removeAttribute("required");
 };
 
 // call formAddBook() when #addButton is clicked
